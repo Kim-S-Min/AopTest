@@ -12,12 +12,14 @@ public class App {
 		
 		//	Bean 검색
 		ProductService ps = ac.getBean(ProductService.class);	//	type으로 검색
-//		ProductService ps = ac.getBean("productService");	//	id로 검색
-		
-		//	서비스 실행
-		ProductVo vo = ps.findProduct("NoteBook");
-		System.out.println("Found:" + vo);
+//		ProductService ps =ac.getBean("productService");	//	id로 검색
 
+		//	서비스 실행
+		ProductVo vo = ps.findProduct("Notebook");
+		System.out.println("Found:" + vo);
+		
+		//	예외 발생
+		ProductVo vo2 = ps.findProduct(null);
 	}
 
 }
